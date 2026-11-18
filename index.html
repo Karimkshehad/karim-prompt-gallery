@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>معرض برومبتات كريم شهاد — Karim Shehad Prompt Gallery</title>
+<meta name="description" content="برومبتات جديدة كل يوم من كريم شهاد — صور وفيديو سينمائي. انسخ البرومبت وشغّله في أداتك.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800;900&family=Manrope:wght@500;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{
+  --ink:#0b0b0c; --ink2:#26262b; --paper:#f4f4f2; --card:#ffffff;
+  --line:#e4e4e0; --muted:#71717a; --gold:#e8c96a; --gold-dark:#b8912f;
+  --blue:#1e5eff; --red:#e5484d;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:"Cairo",system-ui,-apple-system,"Segoe UI",Tahoma,sans-serif;background:var(--paper);color:var(--ink);line-height:1.6}
+.en{font-family:"Manrope","Cairo",sans-serif}
+a{color:inherit}
+.wrap{max-width:1180px;margin:0 auto;padding:0 20px}
+/* header */
+header{border-bottom:2px solid var(--ink);padding:34px 0 22px;background:var(--paper)}
+.brand{display:flex;align-items:center;gap:12px;flex-wrap:wrap}
+.brand .logo{width:52px;height:52px;background:var(--ink);color:var(--gold);display:flex;align-items:center;justify-content:center;font-weight:900;font-size:26px;border-radius:10px}
+.brand .bname{font-weight:900;font-size:20px;line-height:1.2}
+.brand .bname small{display:block;font-size:12px;font-weight:700;color:var(--muted);letter-spacing:.5px}
+h1{font-size:clamp(30px,5vw,48px);font-weight:900;line-height:1.15;margin-top:22px}
+h1 .gold{color:var(--gold-dark)}
+.tagline{font-size:17px;color:var(--ink2);margin-top:8px;max-width:720px}
+.tagline b{font-weight:800}
+.note{margin-top:16px;background:#fff8e1;border:1px solid var(--gold);border-radius:12px;padding:12px 16px;font-size:14.5px;display:flex;gap:10px;align-items:flex-start}
+.note .dot{flex:none;width:10px;height:10px;border-radius:50%;background:var(--gold-dark);margin-top:7px}
+.note b{font-weight:800}
+/* controls */
+.controls{position:sticky;top:0;z-index:20;background:var(--paper);padding:14px 0;border-bottom:1px solid var(--line)}
+.controls-row{display:flex;gap:10px;flex-wrap:wrap;align-items:center}
+.search{flex:1 1 220px;min-width:180px}
+.search input{width:100%;padding:10px 14px;border:1.5px solid var(--ink);border-radius:999px;background:#fff;font-family:inherit;font-size:15px;outline:none}
+.search input:focus{border-color:var(--blue)}
+.pills{display:flex;gap:8px;flex-wrap:wrap}
+.pill{padding:8px 16px;border:1.5px solid var(--ink);border-radius:999px;background:#fff;font-family:inherit;font-size:14px;font-weight:700;cursor:pointer;transition:all .15s}
+.pill:hover{border-color:var(--blue);color:var(--blue)}
+.pill.active{background:var(--ink);color:#fff;border-color:var(--ink)}
+.pill.gold.active{background:var(--gold-dark);border-color:var(--gold-dark);color:#fff}
+select.sort{padding:8px 12px;border:1.5px solid var(--ink);border-radius:999px;background:#fff;font-family:inherit;font-size:14px;font-weight:700;cursor:pointer}
+.meta-line{display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap;margin:20px 0 6px;font-size:14px;color:var(--muted)}
+.meta-line .next{color:var(--gold-dark);font-weight:800}
+/* day sections */
+.day{margin-top:34px}
+.day-head{display:flex;align-items:baseline;gap:12px;flex-wrap:wrap;border-bottom:2px solid var(--ink);padding-bottom:8px;margin-bottom:18px}
+.day-head h2{font-size:23px;font-weight:900}
+.day-head .count{font-size:13px;color:var(--muted);font-weight:700}
+.badge-today{background:var(--gold);color:var(--ink);font-size:12px;font-weight:900;padding:3px 10px;border-radius:999px}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:20px}
+/* card */
+.card{background:var(--card);border:1px solid var(--line);border-radius:16px;overflow:hidden;display:flex;flex-direction:column;transition:box-shadow .18s,transform .18s}
+.card:hover{box-shadow:0 10px 30px rgba(0,0,0,.10);transform:translateY(-2px)}
+.card .thumb{position:relative;cursor:pointer;background:#111;aspect-ratio:4/5;overflow:hidden}
+.card .thumb img{width:100%;height:100%;object-fit:cover;display:block}
+.card .thumb .zoom{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;background:rgba(0,0,0,0);color:#fff;font-weight:800;font-size:15px;opacity:0;transition:all .18s}
+.card .thumb:hover .zoom{opacity:1;background:rgba(0,0,0,.35)}
+.video-plate{width:100%;height:100%;display:flex;flex-direction:column;justify-content:center;align-items:center;gap:6px;background:linear-gradient(160deg,#17171a,#0b0b0c);color:#fff;text-align:center;padding:24px}
+.video-plate .sc{font-size:13px;letter-spacing:2px;color:var(--gold);font-weight:800}
+.video-plate .vt{font-size:22px;font-weight:900;line-height:1.3}
+.video-plate .vm{font-size:13px;color:#a1a1aa}
+.card .body{padding:16px 16px 14px;display:flex;flex-direction:column;gap:10px;flex:1}
+.card h3{font-size:18px;font-weight:900;line-height:1.35}
+.card h3 .en-sub{display:block;font-size:12.5px;font-weight:700;color:var(--muted)}
+.tags{display:flex;gap:6px;flex-wrap:wrap}
+.tag{font-size:12px;font-weight:700;padding:3px 10px;border-radius:999px;border:1px solid var(--line);background:var(--paper);color:var(--ink2)}
+.tag.model{border-color:var(--blue);color:var(--blue);background:#eef3ff}
+.tag.video{border-color:var(--red);color:var(--red);background:#fff0f0}
+.tag.warn{border-color:var(--gold-dark);color:#7a5c10;background:#fff8e1}
+.prompt-prev{font-family:"Manrope",monospace;font-size:13px;line-height:1.55;color:var(--ink2);background:var(--paper);border:1px solid var(--line);border-radius:10px;padding:10px 12px;direction:ltr;text-align:left;display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden}
+.card .actions{display:flex;gap:8px;margin-top:auto}
+.btn{flex:1;padding:11px 10px;border-radius:10px;font-family:inherit;font-size:15px;font-weight:800;cursor:pointer;border:1.5px solid var(--ink);transition:all .15s}
+.btn-copy{background:var(--ink);color:#fff}
+.btn-copy:hover{background:var(--blue);border-color:var(--blue)}
+.btn-copy.done{background:#15803d;border-color:#15803d}
+.btn-view{background:#fff;color:var(--ink)}
+.btn-view:hover{border-color:var(--blue);color:var(--blue)}
+.empty{text-align:center;padding:60px 20px;color:var(--muted);font-size:17px}
+/* modal */
+.modal-bg{position:fixed;inset:0;background:rgba(0,0,0,.72);z-index:50;display:none;align-items:flex-start;justify-content:center;padding:24px 14px;overflow-y:auto}
+.modal-bg.open{display:flex}
+.modal{background:#fff;border-radius:18px;max-width:860px;width:100%;overflow:hidden;animation:pop .18s ease}
+@keyframes pop{from{transform:scale(.97);opacity:.6}to{transform:scale(1);opacity:1}}
+.modal .m-img{width:100%;max-height:52vh;object-fit:contain;background:#111;display:block}
+.modal .m-body{padding:22px}
+.modal h3{font-size:22px;font-weight:900}
+.modal .m-prompt{font-family:"Manrope",monospace;font-size:14px;line-height:1.65;color:var(--ink2);background:var(--paper);border:1px solid var(--line);border-radius:12px;padding:16px;direction:ltr;text-align:left;white-space:pre-wrap;word-wrap:break-word;max-height:38vh;overflow-y:auto;margin:14px 0}
+.modal .m-actions{display:flex;gap:10px;flex-wrap:wrap}
+.modal .m-actions .btn{flex:1 1 160px}
+.btn-close{background:#fff}
+footer{margin-top:56px;border-top:2px solid var(--ink);padding:28px 0 40px;font-size:14px;color:var(--muted)}
+footer .frow{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;align-items:center}
+footer a{font-weight:800;color:var(--ink);text-decoration:none;border-bottom:2px solid var(--gold)}
+footer a:hover{color:var(--blue)}
+@media(max-width:560px){.grid{grid-template-columns:1fr}.modal .m-actions .btn{flex:1 1 100%}}
+</style>
+</head>
+<body>
+<header>
+  <div class="wrap">
+    <div class="brand">
+      <div class="logo">ك</div>
+      <div class="bname">Karim Shehad AI Art<small>THE AI FILMMAKER</small></div>
+    </div>
+    <h1>معرض برومبتات <span class="gold">كريم شهاد</span></h1>
+    <p class="tagline">برومبتات جديدة <b>كل يوم</b> — صور بورتريه وعيد ميلاد وفيديو سينمائي، مجربة فعلًا. انسخ البرومبت، أرفق صورتك، وشغّله في أداتك.</p>
+    <div class="note"><span class="dot"></span><div><b>ملحوظة صريحة:</b> المعرض ده مكتبة برومبتات، مفيش مولّد مدمج. كل برومبت مكتوب لموديل معين (GPT Image / Nano Banana / Seedance) — انسخه وشغّله في الأداة اللي بتستخدمها. البرومبتات اللي فيها وش بتحتاج صورة بورتريه مرجعية من عندك.</div></div>
+  </div>
+</header>
+
+<div class="controls">
+  <div class="wrap">
+    <div class="controls-row">
+      <div class="search"><input id="q" type="search" placeholder="دوّر في البرومبتات… (مثال: مجدي يعقوب، تورتة، متحف)"></div>
+      <select class="sort" id="sort">
+        <option value="new">الأحدث أولًا</option>
+        <option value="old">الأقدم أولًا</option>
+      </select>
+    </div>
+    <div class="controls-row" style="margin-top:10px">
+      <div class="pills" id="catPills">
+        <button class="pill active" data-cat="all">الكل</button>
+        <button class="pill" data-cat="portrait">بورتريه</button>
+        <button class="pill" data-cat="birthday">عيد ميلاد</button>
+        <button class="pill" data-cat="video">فيديو سينمائي</button>
+      </div>
+      <div class="pills" id="modelPills">
+        <button class="pill gold active" data-model="all">كل الموديلات</button>
+        <button class="pill gold" data-model="GPT Image">GPT Image</button>
+        <button class="pill gold" data-model="Nano Banana">Nano Banana</button>
+        <button class="pill gold" data-model="Seedance">Seedance</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<main class="wrap">
+  <div class="meta-line">
+    <span id="count"></span>
+    <span class="next" id="nextDrop"></span>
+  </div>
+  <div id="days"></div>
+  <div class="empty" id="empty" style="display:none">مفيش برومبتات مطابقة للبحث ده — جرّب كلمة تانية أو غيّر التصنيف.</div>
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="frow">
+      <div>© 2026 كريم شهاد | Karim Shehad AI Art — كل البرومبتات مجانية للاستخدام الشخصي.</div>
+      <div style="display:flex;gap:18px;flex-wrap:wrap">
+        <a href="https://karimkshehad.github.io/karim-shehad-page/" target="_blank" rel="noopener">صفحتي الرئيسية</a>
+        <a href="https://www.facebook.com/KarimShehadArt" target="_blank" rel="noopener">فيسبوك</a>
+        <a href="https://www.instagram.com/karimshehadart" target="_blank" rel="noopener">انستجرام</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<div class="modal-bg" id="modalBg">
+  <div class="modal">
+    <img class="m-img" id="mImg" alt="">
+    <div class="m-body">
+      <h3 id="mTitle"></h3>
+      <div class="tags" id="mTags" style="margin-top:8px"></div>
+      <div class="m-prompt" id="mPrompt"></div>
+      <div class="m-actions">
+        <button class="btn btn-copy" id="mCopy">نسخ البرومبت</button>
+        <button class="btn btn-close" id="mClose">إغلاق</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+let ALL = [];
+let state = { cat: 'all', model: 'all', q: '', sort: 'new' };
+const CAT_AR = { portrait: 'بورتريه', birthday: 'عيد ميلاد', video: 'فيديو سينمائي' };
+const NOTE_AR = {
+  photo: 'يحتاج صورة بورتريه مرجعية',
+  composite: 'عمل مركّب: صورة حقيقية + خلفية AI + تصميم',
+  'composite-noface': 'عمل مركّب · بدون وش — مش محتاج صورة مرجعية',
+  nostill: 'برومبت فيديو — لسه مفيش لقطة مولّدة'
+};
+function todayStr(){ return new Date().toLocaleDateString('en-CA'); }
+function fmtDate(d){
+  try { return new Date(d + 'T12:00:00').toLocaleDateString('ar-EG', { weekday: 'long', day: 'numeric', month: 'long', year: 'numeric' }); }
+  catch(e){ return d; }
+}
+function esc(s){ return s.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;'); }
+function visibleCards(){
+  const t = todayStr();
+  return ALL.filter(c => c.date <= t);
+}
+function filtered(){
+  let list = visibleCards();
+  if (state.cat !== 'all') list = list.filter(c => c.category === state.cat);
+  if (state.model !== 'all') list = list.filter(c => c.model.includes(state.model));
+  if (state.q.trim()){
+    const q = state.q.trim().toLowerCase();
+    list = list.filter(c => (c.title_ar + ' ' + c.title_en + ' ' + c.prompt).toLowerCase().includes(q));
+  }
+  list.sort((a,b) => state.sort === 'new' ? (a.date < b.date ? 1 : a.date > b.date ? -1 : a.id < b.id ? -1 : 1)
+                                          : (a.date < b.date ? -1 : a.date > b.date ? 1 : a.id < b.id ? -1 : 1));
+  return list;
+}
+function cardHTML(c){
+  const isVideo = c.kind === 'video';
+  let media;
+  if (isVideo){
+    const n = parseInt(c.id.split('-')[1], 10);
+    media = `<div class="thumb" onclick="openModal('${c.id}')"><div class="video-plate"><div class="sc">STONE AGE · EP.1</div><div class="vt">${esc(c.title_ar)}</div><div class="vm">المشهد ${n} من 15 · 8 ثوانٍ · بدون حوار</div><div class="vm" style="color:var(--gold)">برومبت فيديو كامل — انسخ وشغّل</div></div></div>`;
+  } else {
+    media = `<div class="thumb" onclick="openModal('${c.id}')"><img src="${esc(c.image)}" alt="${esc(c.title_ar)}" loading="lazy"><div class="zoom">عرض كامل + البرومبت</div></div>`;
+  }
+  const warn = c.note !== 'photo' ? `<span class="tag warn">${NOTE_AR[c.note]}</span>` : `<span class="tag">${NOTE_AR.photo}</span>`;
+  return `<article class="card" data-id="${c.id}">
+    ${media}
+    <div class="body">
+      <h3>${esc(c.title_ar)}<span class="en-sub en">${esc(c.title_en)}</span></h3>
+      <div class="tags">
+        <span class="tag model">${esc(c.model)}</span>
+        <span class="tag ${isVideo ? 'video' : ''}">${CAT_AR[c.category]}</span>
+        ${warn}
+      </div>
+      <div class="prompt-prev">${esc(c.prompt)}</div>
+      <div class="actions">
+        <button class="btn btn-copy" onclick="copyPrompt('${c.id}', this)">نسخ البرومبت</button>
+        <button class="btn btn-view" onclick="openModal('${c.id}')">عرض كامل</button>
+      </div>
+    </div>
+  </article>`;
+}
+function render(){
+  const list = filtered();
+  const daysEl = document.getElementById('days');
+  const emptyEl = document.getElementById('empty');
+  const t = todayStr();
+  document.getElementById('count').textContent = `معروض ${list.length} برومبت من ${visibleCards().length} — كل يوم 6 جداد`;
+  const future = ALL.map(c => c.date).filter(d => d > t).sort();
+  document.getElementById('nextDrop').textContent = future.length ? `برومبتات جديدة يوم ${fmtDate(future[0])}` : 'أيام جديدة قريبًا — تابع المعرض';
+  if (!list.length){ daysEl.innerHTML = ''; emptyEl.style.display = 'block'; return; }
+  emptyEl.style.display = 'none';
+  const byDay = {};
+  list.forEach(c => { (byDay[c.date] = byDay[c.date] || []).push(c); });
+  const dayKeys = Object.keys(byDay).sort((a,b) => state.sort === 'new' ? (a < b ? 1 : -1) : (a < b ? -1 : 1));
+  daysEl.innerHTML = dayKeys.map(d => `
+    <section class="day">
+      <div class="day-head"><h2>${d === t ? 'برومبتات اليوم — ' : ''}${fmtDate(d)}</h2>
+      ${d === t ? '<span class="badge-today">اليوم</span>' : ''}<span class="count">${byDay[d].length} برومبتات</span></div>
+      <div class="grid">${byDay[d].map(cardHTML).join('')}</div>
+    </section>`).join('');
+}
+async function copyText(text, btn){
+  try { await navigator.clipboard.writeText(text); }
+  catch(e){
+    const ta = document.createElement('textarea');
+    ta.value = text; document.body.appendChild(ta); ta.select();
+    document.execCommand('copy'); ta.remove();
+  }
+  if (btn){ const old = btn.textContent; btn.textContent = 'اتنسخ ✓'; btn.classList.add('done');
+    setTimeout(() => { btn.textContent = old; btn.classList.remove('done'); }, 1800); }
+}
+function copyPrompt(id, btn){
+  const c = ALL.find(x => x.id === id);
+  if (c) copyText(c.prompt, btn);
+}
+let modalCard = null;
+function openModal(id){
+  const c = ALL.find(x => x.id === id);
+  if (!c) return;
+  modalCard = c;
+  const img = document.getElementById('mImg');
+  if (c.image){ img.src = c.image; img.style.display = 'block'; img.alt = c.title_ar; }
+  else { img.style.display = 'none'; }
+  document.getElementById('mTitle').innerHTML = esc(c.title_ar) + ` <span style="display:block;font-size:14px;color:var(--muted)" class="en">${esc(c.title_en)}</span>`;
+  document.getElementById('mTags').innerHTML =
+    `<span class="tag model">${esc(c.model)}</span><span class="tag">${CAT_AR[c.category]}</span><span class="tag">${NOTE_AR[c.note]}</span><span class="tag">${fmtDate(c.date)}</span>`;
+  document.getElementById('mPrompt').textContent = c.prompt;
+  document.getElementById('mCopy').textContent = 'نسخ البرومبت';
+  document.getElementById('mCopy').classList.remove('done');
+  document.getElementById('modalBg').classList.add('open');
+  document.body.style.overflow = 'hidden';
+}
+function closeModal(){
+  document.getElementById('modalBg').classList.remove('open');
+  document.body.style.overflow = '';
+}
+document.getElementById('mClose').addEventListener('click', closeModal);
+document.getElementById('modalBg').addEventListener('click', e => { if (e.target.id === 'modalBg') closeModal(); });
+document.addEventListener('keydown', e => { if (e.key === 'Escape') closeModal(); });
+document.getElementById('mCopy').addEventListener('click', function(){ if (modalCard) copyText(modalCard.prompt, this); });
+document.getElementById('q').addEventListener('input', e => { state.q = e.target.value; render(); });
+document.getElementById('sort').addEventListener('change', e => { state.sort = e.target.value; render(); });
+document.querySelectorAll('#catPills .pill').forEach(b => b.addEventListener('click', () => {
+  document.querySelectorAll('#catPills .pill').forEach(x => x.classList.remove('active'));
+  b.classList.add('active'); state.cat = b.dataset.cat; render();
+}));
+document.querySelectorAll('#modelPills .pill').forEach(b => b.addEventListener('click', () => {
+  document.querySelectorAll('#modelPills .pill').forEach(x => x.classList.remove('active'));
+  b.classList.add('active'); state.model = b.dataset.model; render();
+}));
+fetch('prompts.json').then(r => r.json()).then(data => { ALL = data.cards; render(); })
+.catch(() => { document.getElementById('days').innerHTML = '<div class="empty">تعذّر تحميل البرومبتات — حدّث الصفحة وحاول تاني.</div>'; });
+</script>
+</body>
+</html>
